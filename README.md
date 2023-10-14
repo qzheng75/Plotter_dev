@@ -24,7 +24,7 @@ To get started with our project, follow these steps:
 
 1. Clone the repository to your local machine:
    ```shell
-   git clone https://github.com/qzheng75/Visualize_Plots_dev.git
+   git clone https://github.com/qzheng75/Plotter_dev.git
 
 ## Datasets involved in this project
    - Plots: https://www.kaggle.com/competitions/benetech-making-graphs-accessible
