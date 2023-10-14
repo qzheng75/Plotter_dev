@@ -1,0 +1,60 @@
+{% extends "layout.html" %}
+{% block content %}
+<div class="content-section">
+  <legend class="border-bottom mb-4">Analyze {{ plot_type }}</legend>
+  <div class="images-section">
+      <div class="row">
+          <div class="col-6"> <!-- Adjust the column width as needed -->
+              <a href="{{ url_for('images.serve_image', filename=image) }}" target="_blank">
+                  <img src="{{ url_for('images.serve_image', filename=image) }}" class="cropped-analyze-image" />
+              </a>
+          </div>
+      </div>
+      <div> <!-- Adjust the column width as needed -->
+        <div class="analyze-buttons">
+          <form method="POST" action="{{ url_for('images.button_clicked', button_id=1) }}">
+            <button type="submit" class="analyze-button">Get source data</button>
+            Download the data series in the plot in .json format.
+          </form>
+          
+          {% if plot_type != 'scatterplot' %}
+            <form method="POST" action="{{ url_for('images.button_clicked', button_id=2) }}">
+              <button type="submit" class="analyze-button"> Transform to scatterplot </button>
+              Transform the plot to an equivalent scatterplot
+            </form>
+          {% endif %}
+
+          {% if plot_type != 'vertical bar' %}
+            <form method="POST" action="{{ url_for('images.button_clicked', button_id=3) }}">
+              <button type="submit" class="analyze-button"> Transform to vertical bar</button>
+              Transform the plot to an equivalent vertical bar
+            </form>
+          {% endif %}
+
+          {% if plot_type != 'dot plot' %}
+            <form method="POST" action="{{ url_for('images.button_clicked', button_id=4) }}">
+              <button type="submit" class="analyze-button"> Transform to dot plot </button>
+              Transform the plot to an equivalent dot plot
+            </form>
+          {% endif %}
+
+          {% if plot_type != 'line plot' %}
+            <form method="POST" action="{{ url_for('images.button_clicked', button_id=5) }}">
+              <button type="submit" class="analyze-button"> Transform to line plot </button>
+              Transform the plot to an equivalent line plot
+            </form>
+          {% endif %}
+
+          {% if plot_type != 'horizontal bar' %}
+            <form method="POST" action="{{ url_for('images.button_clicked', button_id=6) }}">
+              <button type="submit" class="analyze-button"> Transform to horizontal bar </button>
+              Transform the plot to an equivalent horizontal bar
+            </form>
+          {% endif %}
+
+        </div>
+    </div>
+  </div>
+</div>
+
+{% endblock content %}
