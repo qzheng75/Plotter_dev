@@ -28,6 +28,10 @@ Clone the repository to your local machine:
    ```shell
    git clone https://github.com/qzheng75/Visualize_Plots_dev.git
    ```
+Run the current version of the web app:
+   ```shell
+   python run.py
+   ```
 
 ## Datasets involved in this project
 - The plots utilized for training the plot classification network and fine-tuning Yolox7 can be found at this Kaggle competition link: Benetech Making Graphs Accessible.
